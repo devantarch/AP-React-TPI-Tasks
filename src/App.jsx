@@ -6,17 +6,26 @@ import './App.css'
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+// Importamos los componentes para poder utilizarlos, y los elementos requeridos de REACT.
+
+
+// Declara el componente funcional llamado App. 
 
 const App = () => {
 
+  // Con el Hook de use state se crea variable que almacena array de tareas, la función setTasks actualiza ese Array.
    
     const [tasks, setTasks] = useState([]);
+
+    // Se muestra por consola la actualización de lista de tareas.
   
     useEffect(() => {
    
       console.log('Lista de tareas actualizada:', tasks);
     
     }, [tasks]);
+
+    // Buscamos el almacenamiento local de la lista de tareas.
 
     useEffect(() => {
    
@@ -25,6 +34,9 @@ const App = () => {
     
     }, []);
 
+    // Actualizamos el almacenamiento local de la lista de tareas. Estamos tratando de resolver que no guarda el estado "completado",
+    // al refrezcar el navegador. Si mantiene el listado de tareas existentes.
+
     useEffect(() => {
    
       const data = JSON.stringify(tasks)
@@ -32,7 +44,6 @@ const App = () => {
     
     }, [tasks]);
 
-    
   
 
   const toggleComplete = taskId => {
@@ -42,6 +53,7 @@ const App = () => {
       )
     );
   };
+
 
   const deleteTask = taskId => {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== taskId));

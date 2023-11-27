@@ -1,5 +1,5 @@
 import TaskItem from "../TaskItem/TaskItem";
-import { useEffect } from "react";
+
 
 const TaskList = ({ tasks, onCompleteTask, onDeleteTask }) => {
 
@@ -15,17 +15,7 @@ const TaskList = ({ tasks, onCompleteTask, onDeleteTask }) => {
       ))}
     </div>
   );
-
-  useEffect(() => {
-    const data = window.localStorage.getItem('taskArray')
-    if (data != null) setTasks(JSON.parse(data));
-  }, []);
-
-  useEffect(() => {
-    const data = JSON.stringify(tasks)
-    window.localStorage.setItem('taskArray', data)
-  }, [tasks]);
-
+  
 };
 
 export default TaskList;
