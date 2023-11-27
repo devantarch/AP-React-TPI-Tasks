@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const App = () => {
- 
+
+   
     const [tasks, setTasks] = useState([]);
   
     useEffect(() => {
@@ -16,6 +17,22 @@ const App = () => {
       console.log('Lista de tareas actualizada:', tasks);
     
     }, [tasks]);
+
+    useEffect(() => {
+   
+      const data = window.localStorage.getItem('taskList')
+      if (data !== null) setTasks(JSON.parse(data))
+    
+    }, []);
+
+    useEffect(() => {
+   
+      const data = JSON.stringify(tasks)
+      window.localStorage.setItem('taskList', data)
+    
+    }, [tasks]);
+
+    
   
 
   const toggleComplete = taskId => {
@@ -39,6 +56,8 @@ const App = () => {
     setTasks(prevTasks => [...prevTasks, newTask]);
     };
 
+
+
   return (
     
     <div className="app-container">
@@ -53,5 +72,7 @@ const App = () => {
     
   );
 };
+
+
 
 export default App;
