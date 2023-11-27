@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background: rgb(197, 231, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background: linear-gradient(0deg, rgba(25,237,138,0.6643032212885154) 42%, rgba(191,13,136,0.577468487394958) 100%);
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 30px;
+}
+
+.content-container {
+  text-align: center;
+}
+
+.icono-lista {
+  margin-right: 10px; 
+  color: #7e096a;
+  width: 25px;
+  margin-left: 10px;
+  margin-top: 3px;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  color:#7e096a;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center; 
+}
+
+.task-item{
+ font-size: large;
+ font-family: sans-serif;
+ font-weight: 400;
+ display: block;
+ width: 100%;
+ color: #7e1188;
+ background-color: rgb(209, 226, 226);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-content span {
+  margin-right: 10px; 
+}
+
+.icon-container span {
+  cursor: pointer;
+
+}
+
+.task-input {
+  outline: none;
+  background: none;
+  border: 1px solid ;
+  padding: 0.35em 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #524141c5;
+  border-color: #7e096a;
+  font-weight: 500;
+}
+
+.btn-form {
+  background: #f061e4d3;
+  color: fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+ 
+}
+
+.completed {
+  text-decoration: line-through;
+}
